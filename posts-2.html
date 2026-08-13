@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t3b07-gs-club-cmp-1</title>
+  <meta name="description" content="t3b07-gs-club-cmp-1에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://gangseo-review-guide.mapo-room-guide.xyz/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* Reset & Base */
+ *, *::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+
+ html {
+ scroll-behavior: smooth;
+ }
+
+ body {
+ font-family: system-ui, -apple-system, 'Inter', sans-serif;
+ background-color: #faf8f5;
+ color: #2d2a26;
+ line-height: 1.6;
+ font-size: 16px;
+ -webkit-font-smoothing: antialiased;
+ }
+
+ .container {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+
+ /* Typography */
+ h1, h2, h3, h4 {
+ font-weight: 700;
+ line-height: 1.2;
+ letter-spacing: -0.02em;
+ }
+
+ h1 {
+ font-size: 2.5rem;
+ margin-bottom: 16px;
+ }
+
+ h2 {
+ font-size: 1.75rem;
+ margin-bottom: 24px;
+ border-bottom: 2px solid #2d2a26;
+ padding-bottom: 8px;
+ }
+
+ h3 {
+ font-size: 1.25rem;
+ margin-bottom: 8px;
+ }
+
+ p {
+ margin-bottom: 16px;
+ }
+
+ a {
+ color: #e07a5f;
+ text-decoration: none;
+ transition: color 0.2s ease;
+ }
+
+ a:hover {
+ color: #c05a3f;
+ }
+
+ /* Header & Navigation */
+ header {
+ background-color: #2d2a26;
+ color: #faf8f5;
+ padding: 16px 0;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ border-bottom: 1px solid rgba(250, 248, 245, 0.2);
+ }
+
+ .header-wrapper {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+
+ .logo {
+ font-size: 1.5rem;
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ }
+
+ .logo a {
+ color: #faf8f5;
+ }
+
+ .logo a:hover {
+ color: #e07a5f;
+ }
+
+ nav ul {
+ display: flex;
+ list-style: none;
+ gap: 24px;
+ }
+
+ nav a {
+ color: #faf8f5;
+ font-size: 0.95rem;
+ padding: 4px 0;
+ border-bottom: 2px solid transparent;
+ transition: border-color 0.2s ease;
+ }
+
+ nav a:hover {
+ border-bottom-color: #e07a5f;
+ color: #faf8f5;
+ }
+
+ /* Hamburger Menu */
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ background: none;
+ border: none;
+ padding: 4px;
+ }
+
+ .hamburger span {
+ width: 28px;
+ height: 2px;
+ background-color: #faf8f5;
+ margin: 4px 0;
+ transition: all 0.3s ease;
+ display: block;
+ }
+
+ .nav-toggle {
+ display: none;
+ }
+
+ /* Hero Section */
+ .hero {
+ padding: 80px 0 60px;
+ border-bottom: 2px solid #2d2a26;
+ }
+
+ .hero-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 40px;
+ align-items: center;
+ }
+
+ .hero-visual {
+ background-color: #e07a5f;
+ width: 100%;
+ aspect-ratio: 4/3;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 5rem;
+ border: 2px solid #2d2a26;
+ }
+
+ .hero h1 span {
+ color: #e07a5f;
+ }
+
+ .hero p {
+ font-size: 1.1rem;
+ color: #555;
+ margin-bottom: 24px;
+ }
+
+ .btn-group {
+ display: flex;
+ gap: 16px;
+ flex-wrap: wrap;
+ }
+
+ .btn {
+ display: inline-block;
+ background-color: #2d2a26;
+ color: #faf8f5;
+ padding: 12px 28px;
+ border: 2px solid #2d2a26;
+ font-weight: 600;
+ font-size: 0.95rem;
+ transition: all 0.2s ease;
+ cursor: pointer;
+ }
+
+ .btn:hover {
+ background-color: transparent;
+ color: #2d2a26;
+ }
+
+ .btn-accent {
+ background-color: #e07a5f;
+ border-color: #e07a5f;
+ }
+
+ .btn-accent:hover {
+ background-color: transparent;
+ color: #e07a5f;
+ }
+
+ /* Section */
+ section {
+ padding: 60px 0;
+ border-bottom: 1px solid #ddd;
+ }
+
+ section:last-of-type {
+ border-bottom: 2px solid #2d2a26;
+ }
+
+ /* Card Grid */
+ .card-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 16px;
+ }
+
+ .card {
+ background-color: #fff;
+ border: 2px solid #2d2a26;
+ padding: 24px;
+ transition: transform 0.2s ease, box-shadow 0.2s ease;
+ box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+ }
+
+ .card:hover {
+ transform: translateY(-4px);
+ box-shadow: 0 4px 0 rgba(0,0,0,0.12);
+ }
+
+ .card-icon {
+ font-size: 2.5rem;
+ margin-bottom: 12px;
+ }
+
+ .card h3 {
+ font-size: 1.15rem;
+ }
+
+ .card p {
+ font-size: 0.95rem;
+ color: #555;
+ margin-bottom: 12px;
+ }
+
+ .card-meta {
+ font-size: 0.85rem;
+ color: #888;
+ border-top: 1px solid #eee;
+ padding-top: 12px;
+ margin-top: 12px;
+ }
+
+ /* Review Cards */
+ .review-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 16px;
+ }
+
+ .review-card {
+ background-color: #fff;
+ border: 2px solid #2d2a26;
+ padding: 24px;
+ box-shadow: 0 2px 0 rgba(0,0,0,0.08);
+ }
+
+ .review-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 12px;
+ }
+
+ .review-nickname {
+ font-weight: 700;
+ font-size: 1rem;
+ }
+
+ .review-date {
+ font-size: 0.8rem;
+ color: #888;
+ }
+
+ .stars {
+ color: #e07a5f;
+ font-size: 1.1rem;
+ letter-spacing: 2px;
+ }
+
+ .review-text {
+ font-size: 0.95rem;
+ color: #444;
+ line-height: 1.5;
+ }
+
+ /* Comparison Table */
+ .compare-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 16px;
+ }
+
+ .compare-item {
+ background-color: #fff;
+ border: 2px solid #2d2a26;
+ padding: 24px;
+ }
+
+ .compare-item h3 {
+ border-bottom: 1px solid #ddd;
+ padding-bottom: 8px;
+ margin-bottom: 16px;
+ }
+
+ .compare-item ul {
+ list-style: none;
+ }
+
+ .compare-item li {
+ padding: 6px 0;
+ font-size: 0.95rem;
+ border-bottom: 1px solid #f0f0f0;
+ }
+
+ .compare-item li:last-child {
+ border-bottom: none;
+ }
+
+ .price-tag {
+ font-weight: 700;
+ color: #e07a5f;
+ }
+
+ /* CTA Section */
+ .cta-section {
+ text-align: center;
+ padding: 60px 0;
+ }
+
+ .cta-section h2 {
+ border-bottom: none;
+ padding-bottom: 0;
+ margin-bottom: 16px;
+ }
+
+ .cta-section p {
+ max-width: 600px;
+ margin: 0 auto 24px;
+ font-size: 1.1rem;
+ }
+
+ /* Footer */
+ footer {
+ background-color: #2d2a26;
+ color: #faf8f5;
+ padding: 32px 0;
+ text-align: center;
+ border-top: 2px solid #e07a5f;
+ }
+
+ footer p {
+ margin-bottom: 4px;
+ font-size: 0.9rem;
+ color: #ccc;
+ }
+
+ footer a {
+ color: #e07a5f;
+ }
+
+ footer a:hover {
+ color: #faf8f5;
+ }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+ .container {
+ padding: 0 16px;
+ }
+
+ h1 {
+ font-size: 1.75rem;
+ }
+
+ h2 {
+ font-size: 1.35rem;
+ }
+
+ .hero-grid {
+ grid-template-columns: 1fr;
+ gap: 24px;
+ }
+
+ .hero {
+ padding: 40px 0 32px;
+ }
+
+ .hero-visual {
+ aspect-ratio: 16/9;
+ font-size: 3rem;
+ }
+
+ .card-grid,
+ .review-grid,
+ .compare-grid {
+ grid-template-columns: 1fr;
+ gap: 16px;
+ }
+
+ section {
+ padding: 40px 0;
+ }
+
+ /* Hamburger active */
+ .hamburger {
+ display: flex;
+ }
+
+ nav ul {
+ display: none;
+ flex-direction: column;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ right: 0;
+ background-color: #2d2a26;
+ padding: 16px 24px;
+ gap: 12px;
+ border-top: 1px solid rgba(250, 248, 245, 0.2);
+ }
+
+ .nav-toggle:checked ~ nav ul {
+ display: flex;
+ }
+
+ .nav-toggle:checked + .hamburger span:nth-child(1) {
+ transform: rotate(45deg) translate(5px, 5px);
+ }
+
+ .nav-toggle:checked + .hamburger span:nth-child(2) {
+ opacity: 0;
+ }
+
+ .nav-toggle:checked + .hamburger span:nth-child(3) {
+ transform: rotate(-45deg) translate(5px, -5px);
+ }
+
+ .btn-group {
+ flex-direction: column;
+ }
+
+ .btn {
+ text-align: center;
+ }
+
+ .review-header {
+ flex-direction: column;
+ align-items: flex-start;
+ gap: 4px;
+ }
+ }
+
+ /* Small utilities */
+ .text-accent {
+ color: #e07a5f;
+ }
+
+ .gap-16 {
+ gap: 16px;
+ }
+
+ .mt-16 {
+ margin-top: 16px;
+ }
+
+ .mb-16 {
+ margin-bottom: 16px;
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · t3b07-gs-club-cmp-1">
+  <meta property="og:description" content="t3b07-gs-club-cmp-1에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://gangseo-review-guide.mapo-room-guide.xyz/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="container header-wrapper">
+ <div class="logo">
+ <a href="/">강서클럽비교</a>
+ </div>
+ 
+ <input type="checkbox" id="nav-toggle" class="nav-toggle">
+ <label for="nav-toggle" class="hamburger" aria-label="메뉴 열기">
+ 
+ 
+ 
+ </label>
+ 
+ <nav>
+ <ul>
+ <li><a href="#clubs">클럽</a></li>
+ <li><a href="#compare">비교</a></li>
+ <li><a href="#reviews">리뷰</a></li>
+ 
+ </ul>
+ </nav>
+ </div>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 38개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0112.html">강서 클럽 비교와 다른, 망원 노래방 위치 및 접근성 확인 체크리스트</a>
+        <p class="post-item__summary">여가 활동 장소를 선택할 때 강서 클럽 비교처럼 내부 시설이나 분위기도 중요하지만, 망원 지역의 노래방을 고를 때는 위치와 접근성이 즐거움을 결정하는 핵심 요소가 될 수 있습니다. 신나는 노래를 부</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0113.html">강서 클럽 비교 분석하며 찾아보는 홍대 노래방 추천정보</a>
+        <p class="post-item__summary">친구들과 모임을 마치고 2차 장소를 고민하다 보면 때로는 복잡한 군중 속에 휩쓸리곤 합니다. 강서 클럽 비교를 통해 유흥 문화를 접하는 분들이라도 막상 홍대 인근의 노래방을 찾으려면 선택의 폭이 넓</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0114.html">강서 클럽 비교 시각으로 보는 공덕 셔츠룸 추천정보</a>
+        <p class="post-item__summary">일부 방문객들은 셔츠룸이 밤이 늦어야만 활기를 띤다고 오해하곤 합니다. 하지만 강서 클럽 비교 기준에서 보듯, 업종마다 피크 타임과 서비스 품질이 정점에 달하는 시간대는 확연히 다릅니다. 이른 저녁</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0115.html">강서 클럽 비교와 연남 유흥 추천정보 확인하기</a>
+        <p class="post-item__summary">완벽한 유흥 경험은 적절한 공간 선정과 동행 인원의 조화에서 시작됩니다. 강서 클럽 비교 데이터를 바탕으로 자신의 취향을 파악한 뒤, 연남 지역의 특색을 결합하는 과정이 필요합니다. 인원 구성이 2</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0116.html">강서 클럽 비교 이후 따져보는 마곡 가라오케 추천정보</a>
+        <p class="post-item__summary">여러분은 유흥 장소를 정할 때 가장 먼저 무엇을 확인하시나요? 강서 클럽 비교를 통해 대략적인 가이드라인을 세우셨다면, 이제 마곡이라는 지역적 특성을 반영한 세부적인 비교 기준이 필요할 때입니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0117.html">강서 클럽 비교 분석을 통한 마곡 유흥 추천정보 확인하는 방법</a>
+        <p class="post-item__summary">지역 내 유흥 문화가 다양해지면서 강서 클럽 비교 데이터를 찾는 이들이 늘고 있습니다. 하지만 무분별한 정보 속에서 신뢰할 수 있는 곳을 찾기란 쉽지 않은 과제입니다. 마곡 지역의 유흥 시설을 현명</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0118.html">강서 클럽 비교 기준으로 살펴보는 합정 노래방 추천정보</a>
+        <p class="post-item__summary">강서 클럽 비교 과정에서 파생되는 다양한 유흥 정보들은 지역을 넘어 합정까지 이어집니다. 특히 노래방을 이용할 때 가장 큰 고민거리는 예산과 가성비입니다. 합리적인 선택을 내리기 위해 두 가지 형태</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0119.html">강서 클럽 비교 경험담을 통해 알아보는 연남 클럽 추천정보</a>
+        <p class="post-item__summary">강서 클럽 비교 정보를 참고하여 연남 지역의 클럽을 찾는 사람들이 빈번하게 겪는 실수가 있습니다. 단순히 유명하다는 입소문만 믿고 예약 과정 없이 방문하는 것이 대표적인 실패 요인입니다. 준비되지 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0120.html">강서 클럽 비교 분석과 연계된 합정 셔츠룸 추천정보 탐색</a>
+        <p class="post-item__summary">강서 클럽 비교 데이터를 바탕으로 다양한 유흥 지형을 연구하다 보면 자연스럽게 합정 지역의 특수 업종으로 관심이 이동하게 됩니다. 특히 셔츠룸과 같은 시설은 위치와 접근성이 방문의 시작과 끝을 결정</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0121.html">강서 클럽 비교 분석을 통해 알아보는 공덕 가라오케 추천정보</a>
+        <p class="post-item__summary">처음 방문하는 장소에서 목적지를 찾지 못해 골목을 서성이던 경험은 누구나 한 번쯤 겪게 되는 상황입니다. 특히 밤늦은 시간 이동할 때는 안전과 편의성을 모두 고려해야 하므로 사전 정보 파악이 무엇보</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/interview-002-1hwvii1.html">강서 클럽 비교 경험자에게 물어본 현실적인 판단 기준</a>
+        <p class="post-item__summary">강서 지역에서 클럽을 비교할 때 가장 먼저 고려해야 할 요소는 교통 편의성과 주변 환경입니다. 지하철역이나 버스 정류장에서 도보로 이동 가능한 거리는 방문 빈도와 안전에 직접적인 영향을 줍니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-1.html">강서 클럽 비교 정보</a>
+        <p class="post-item__summary">강서 지역에 위치한 다양한 클럽들은 각기 다른 분위기와 주제를 갖추고 있어 방문객의 취향에 따라 선택의 폭이 넓습니다. 최근에는 단순히 음주를 즐기는 공간을 넘어, 테마가 뚜렷한 인테리어와 음악 프</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-2.html">강서 클럽 비교</a>
+        <p class="post-item__summary">강서 지역의 클럽은 다양한 분위기 속에서 방문객에게 독특한 경험을 제공하고자 합니다. 각 장소는 고유의 컨셉과 디자인을 갖추고 있어, 방문하는 목적에 따라 선택의 폭이 달라질 수 있습니다. 또한, </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/myth-001-1hwvii1.html">강서 클럽 비교에 관한 흔한 오해, 직접 확인해보니 달랐던 점</a>
+        <p class="post-item__summary">아, 진짜... 제작비 부족으로 알리익스프레스에서 구매한 소품이 명장면이 된 사연을 통해 타일러 더든이 등장하기 전 싱글 프레임 장면들의 근본적인 배경을 이해해보자. 이 이야기는 갈등 속에 서사가 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-1.html">강서 클럽 비교 – 이용 안내</a>
+        <p class="post-item__summary">강서 지역에는 다양한 클럽과 유흥 시설이 위치해 있으며, 각각 고유한 분위기와 운영 방식을 가지고 있습니다. 여러 곳을 비교할 때는 먼저 자신이 원하는 분위기와 목적을 명확히 하는 것이 중요합니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-2.html">강서 클럽 비교 가이드</a>
+        <p class="post-item__summary">강서 지역 클럽 비교를 진행할 때는 다양한 관점에서 접근해야 합니다. 각 클럽은 고유한 분위기와 주제를 가지고 있어, 단순한 외관보다는 내부의 운영 방향과 공간 활용도가 더 중요한 기준이 될 수 있</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-3.html">강서 클럽 비교</a>
+        <p class="post-item__summary">강서 지역에는 다양한 클럽과 접대 공간이 위치하고 있습니다. 여러 업소를 직접 비교할 때는 분위기, 내부 인테리어, 서비스의 종류, 예약 방식 등 여러 요소를 종합적으로 고려하는 것이 일반적입니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-002-1401z5e.html">강서 클럽 비교 처음 알아볼 때 실제로 많이 묻는 질문 5가지</a>
+        <p class="post-item__summary">강서 지역에서 클럽을 비교할 때 가장 먼저 확인해야 할 사항은 영업 허가 여부와 안전 관리 체계입니다. 공식 기관에서 발급한 허가증을 보유한 업소인지 확인하면 불법 운영으로 인한 위험을 줄일 수 있</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
